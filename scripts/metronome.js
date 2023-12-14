@@ -1,5 +1,5 @@
 
-var snd = [new Audio('assets/footstep.wav'),new Audio('assets/click.wav')];
+var snd = [new Audio('assets/footstep.mp3'),new Audio('assets/click.mp3')];
 snd[0].preload = 'auto';
 snd[1].preload = 'auto';
 snd[0].load();
@@ -8,12 +8,26 @@ snd[1].load();
 var speed = 1.7
 var tempo = 115
 var volume = 0.5
+var muteTimerToggle = false
+var muteTimerCountdown = false
 var running = false
 var start = Date.now()
 var snd_choice = 0
 var offset = 0
+var additional_ghost_data = ["hantu","moroi","thaye"]
+var additional_ghost_var = [0.18,0.085,0.175]
 
 var last_id = "";
+
+function mute(type){
+    if(type == "toggle"){
+        muteTimerToggle = document.getElementById("mute_timer_toggle").checked
+    }
+    if(type == "countdown"){
+        muteTimerCountdown = document.getElementById("mute_timer_countdown").checked
+    }
+}
+
 function toggleSound(set_tempo,id){
     adjustOffset(0)
     speed = set_tempo
@@ -104,6 +118,7 @@ function bpm_tap(){
 
 function bpm_clear() {
     taps = []
+    bpm_list = []
     document.getElementById('input_bpm').innerHTML = `0<br>bpm`;
     document.getElementById('input_speed').innerHTML = `0<br>m/s`;
     document.getElementById('tap_viz').innerHTML = ""
@@ -111,6 +126,16 @@ function bpm_clear() {
     for (var i = 0; i < ghosts.length; i++){
         ghosts[i].style.boxShadow = 'none'
     }
+    $("#guide_tab_footstep").hide()
+    $("#hunts_tab_footstep").hide()
+    for (var g = 0 ;g < additional_ghost_data.length; g++){
+        var speed_tab = document.getElementById(`${additional_ghost_data[g]}_speed_breakdown`)
+        for (var i = 1, row; row = speed_tab.rows[i]; i++){
+            $(row).removeClass("row_select")
+        }
+    }
+    send_bpm_link("-","-",["50%","75%","100%","125%","150%"][parseInt($("#ghost_modifier_speed").val())])
+    send_ghosts_link()
 }
 
 function bpm_calc(forced=false) {
@@ -139,10 +164,14 @@ function bpm_calc(forced=false) {
             current_bpm = get_bpm_average(avg_taps, bpm_precision)
         }
         input_bpm = current_bpm;
-        input_ms = document.getElementById("bpm_type").checked ? get_ms(input_bpm) : get_ms_exact(input_bpm)
+        var ex_ms = get_ms_exact(input_bpm)
+        var av_ms = get_ms(input_bpm)
+        input_ms = document.getElementById("bpm_type").checked ? av_ms : ex_ms
         document.getElementById('input_bpm').innerHTML = `${Math.round(input_bpm)}<br>bpm`;
         document.getElementById('input_speed').innerHTML = `${input_ms}<br>m/s`;
         mark_ghosts(input_ms)
+        mark_ghost_details(ex_ms)
+        send_bpm_link(Math.round(input_bpm).toString(),input_ms.toString(),["50%","75%","100%","125%","150%"][parseInt($("#ghost_modifier_speed").val())])
         saveSettings()
     }
 }
@@ -168,11 +197,32 @@ function get_ms_exact(bpm){
     return bpm == 0 ? 0.00 : cur_ms.toFixed(2)
 }
 
+function mark_ghost_details(ms)
+{
+    ms = parseFloat(ms)
+    $("#guide_tab_footstep").hide()
+    $("#hunts_tab_footstep").hide()
+    for (var g = 0 ;g < additional_ghost_data.length; g++){
+        var speed_tab = document.getElementById(`${additional_ghost_data[g]}_speed_breakdown`)
+        for (var i = 1, row; row = speed_tab.rows[i]; i++){
+            $(row).removeClass("row_select")
+            var speed = parseFloat(row.getElementsByClassName(`${additional_ghost_data[g]}_speed_item`)[0].textContent.replace(" m/s",""))
+            if(((speed - additional_ghost_var[g]) <= ms && ms <= (speed + additional_ghost_var[g]))){
+                $(row).addClass("row_select")
+                $("#guide_tab_footstep").show()
+                $("#hunts_tab_footstep").show()
+            }
+        }
+    }
+}
+
 function mark_ghosts(ms){
     ms = parseFloat(ms)
+    bpm_list = []
     var ghosts = document.getElementsByClassName("ghost_card")
     for (var i = 0; i < ghosts.length; i++){
         ghosts[i].style.boxShadow = 'none'
+        
         if(ms != 0.00){
             var name = ghosts[i].getElementsByClassName("ghost_name")[0].textContent;
             var speed = ghosts[i].getElementsByClassName("ghost_speed")[0].textContent
@@ -201,23 +251,28 @@ function mark_ghosts(ms){
             }
 
             if(document.getElementById("bpm_type").checked){
-                if ((speed_type == "range" && min_speed <= ms && ms <= max_speed) || name == "The Mimic"){
+                if ((speed_type == "range" && min_speed <= ms && ms <= max_speed) || name == "Mimik"){
                     ghosts[i].style.boxShadow = '0px 0px 10px 0px #dbd994'
+                    bpm_list.push(ghosts[i].id)
                 }
                 else if(min_speed === ms || max_speed === ms){
                     ghosts[i].style.boxShadow = '0px 0px 10px 0px #dbd994'
+                    bpm_list.push(ghosts[i].id)
                 }
             }
             else{
-                if ((speed_type == "range" && (min_speed - 0.05) <= ms && ms <= (max_speed + 0.05)) || name == "The Mimic"){
+                if ((speed_type == "range" && (min_speed - 0.05) <= ms && ms <= (max_speed + 0.05)) || name == "Mimik"){
                     ghosts[i].style.boxShadow = '0px 0px 10px 0px #dbd994'
+                    bpm_list.push(ghosts[i].id)
                 }
                 else if(((min_speed - 0.05) <= ms && ms <= (min_speed + 0.05)) || ((max_speed - 0.05) <= ms && ms <= (max_speed + 0.05))){
                     ghosts[i].style.boxShadow = '0px 0px 10px 0px #dbd994'
+                    bpm_list.push(ghosts[i].id)
                 }
             }
         }
     }
+    send_ghosts_link()
 }
 
 function get_bpm_average(values, precision) {

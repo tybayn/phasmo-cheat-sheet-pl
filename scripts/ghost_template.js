@@ -1,29 +1,29 @@
 evi_color = {
     "EMF 5": "#db4d48",
     "DOTs": "#2ccc29",
-    "Ultraviolet": "#ad8ce7",
-    "Freezing": "#9ae0f7",
-    "Ghost Orbs": "#dbd993",
-    "Writing": "#4d8ce3",
+    "Ultrafiolet": "#ad8ce7",
+    "Mroźne temperatury": "#9ae0f7",
+    "Orb": "#dbd993",
+    "Pismo ducha": "#4d8ce3",
     "Spirit Box": "#d18c5e", 
 }
 
 evi_icons = {
     "EMF 5": "imgs/emf5-icon.png",
     "DOTs": "imgs/dots-icon.png",
-    "Ultraviolet": "imgs/fingerprints-icon.png",
-    "Freezing": "imgs/freezing-icon.png",
-    "Ghost Orbs": "imgs/orbs-icon.png",
-    "Writing": "imgs/writing-icon.png",
+    "Ultrafiolet": "imgs/fingerprints-icon.png",
+    "Mroźne temperatury": "imgs/freezing-icon.png",
+    "Orb": "imgs/orbs-icon.png",
+    "Pismo ducha": "imgs/writing-icon.png",
     "Spirit Box": "imgs/spirit-box-icon.png", 
 }
 
 behavior_titles = {
-    "<Tells>":"<div class='dtitle'><i>Tells</i><div class='ddash'></div></div>",
-    "<Behaviors>":"<div class='dtitle'><i>Behaviors</i><div class='ddash'></div></div>",
-    "<Hunt Sanity>":"<div class='dtitle'><i>Hunt Sanity</i><div class='ddash'></div></div>",
-    "<Hunt Speed>":"<div class='dtitle'><i>Hunt Speed</i><div class='ddash'></div></div>",
-    "<Evidence>":"<div class='dtitle'><i>Evidence</i><div class='ddash'></div></div>"
+    "<Informacje>":"<div class='dtitle'><i>Informacje</i><div class='ddash'></div></div>",
+    "<Zachowania>":"<div class='dtitle'><i>Zachowania</i><div class='ddash'></div></div>",
+    "<Próg polowania>":"<div class='dtitle'><i>Próg polowania</i><div class='ddash'></div></div>",
+    "<Prędkość podczas polowania>":"<div class='dtitle'><i>Prędkość podczas polowania</i><div class='ddash'></div></div>",
+    "<Dowody>":"<div class='dtitle'><i>Dowody</i><div class='ddash'></div></div>"
 }
 
 class Ghost {
@@ -61,14 +61,15 @@ class Ghost {
                 <div class="ghost_hunt_high">${data.hunt_sanity_high}</div>
                 <div class="ghost_hunt_low">${data.hunt_sanity_low}</div>
                 <div class="ghost_has_los">${data.has_los}</div>
-                
+
                 <div class="ghost_behavior">
                    ${this.behavior(data.behavior)}
                 </div>
                 <div class="ghost_clear">
-                    <span class="check" onclick="select(this.parentElement.parentElement)"></span>
-                    <span class="space"></span>
-                    <span class="icon" onclick="fade(this.parentElement.parentElement)" ondblclick="remove(this.parentElement.parentElement)"></span>
+                    <img class="card_icon card_icon_select" src="imgs/select.png" onclick="select(this.parentElement.parentElement)">
+                    <img class="card_icon card_icon_guess" style="display:none;" src="imgs/guess.png" onclick="guess(this.parentElement.parentElement)">
+                    <img class="card_icon card_icon_not" src="imgs/not.png" onclick="fade(this.parentElement.parentElement)" ondblclick="remove(this.parentElement.parentElement)">
+                    <img class="card_icon card_icon_died" style="display:none;" src="imgs/died.png" onclick="died(this.parentElement.parentElement)">
                 </div>
             </div>
         `

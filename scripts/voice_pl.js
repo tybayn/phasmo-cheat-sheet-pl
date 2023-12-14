@@ -4,11 +4,11 @@ const ZNLANG = {
     "ghosts":{
         "spirit":[],
         "wraith":[],
-        "phantom":[],
+        "fantom":[],
         "poltergeist":[],
         "banshee":[],
         "jinn":[],
-        "mare":[],
+        "mara":[],
         "revenant":[],
         "shade":[],
         "demon":[],
@@ -22,7 +22,7 @@ const ZNLANG = {
         "the twins":["twins"],
         "raiju":[],
         "obake":[],
-        "the mimic":["mimic"],
+        "mimik":[],
         "moroi":[],
         "deogen":[],
         "thaye":[]
@@ -30,20 +30,20 @@ const ZNLANG = {
     "evidence":{
         "emf 5":[],
         "dots":[],
-        "ultraviolet":[],
-        "freezing":[],
-        "ghost orbs":[],
+        "ultrafiolet":[],
+        "mroźne temperatury":[],
+        "orb":[],
         "writing":[],
         "spirit box":[]
     },
     "speed":{
         "slow":[],
-        "normal":[],
+        "normalny":[],
         "fast":[]
     },
     "sanity":{
         "late":[],
-        "average":["normal"],
+        "average":["normalny"],
         "early":[],
         "very early":[]
     }

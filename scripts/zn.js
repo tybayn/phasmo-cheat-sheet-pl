@@ -1,38 +1,38 @@
 function getCookie(e){let t=e+"=",i=decodeURIComponent(document.cookie).split(";");for(let n=0;n<i.length;n++){let o=i[n];for(;" "==o.charAt(0);)o=o.substring(1);if(0==o.indexOf(t))return o.substring(t.length,o.length)}return""}
 function setCookie(e,t,i){let n=new Date;n.setTime(n.getTime()+864e5*i);let o="expires="+n.toUTCString();document.cookie=e+"="+t+";"+o+";path=/"}
 
+function loadLanguage(){
+    var llang = document.getElementById("language").value
+    if(llang != lang){
+        if(llang == 'en'){
+            window.location.href = `https://tybayn.github.io/phasmo-cheat-sheet/`
+        }
+        else{
+            window.location.href = `https://tybayn.github.io/phasmo-cheat-sheet-${llang}/`
+        }
+    }
+}
+
 function heartbeat(){
     if(znid != "no-connection-to-server"){
         state['settings'] = JSON.stringify(user_settings)
         fetch("https://zero-network.net/zn/"+znid,{method:"POST",Accept:"application/json",body:JSON.stringify(state),signal: AbortSignal.timeout(10000)})
         .then(response => response.json())
         .then(data => {
-            $("#active-users-label").text("Active Users: " + data['active_num_users'])
+            $("#active-users-label").text("Aktywni użytkownicy: " + data['active_num_users'])
         })
         .catch(response => {
-            $("#active-users-label").text("Active Users: -")
+            $("#active-users-label").text("Aktywni użytkownicy: -")
         });
     }
     else {
-        $("#active-users-label").text("Active Users: -")
+        $("#active-users-label").text("Aktywni użytkownicy: -")
     }
-}
-
-function checkParams(){
-    return new Promise((resolve, reject) => {
-        params = new URL(window.location.href).searchParams
-
-        if (params.get('journal')){
-            setCookie("room_id",params.get('journal'),1)
-            window.location.href = window.location.href.split("?")[0]
-        }
-
-        resolve("URL parsed")
-    })
 }
 
 function loadAllAndConnect(){
     let loadZN = new Promise((resolve, reject) => {
+        znid = getCookie("znid")
         if(znid && znid!="no-connection-to-server"){
             $("#session").text(znid)
             try {
@@ -55,12 +55,6 @@ function loadAllAndConnect(){
             resolve("Loaded existing session")
         }
         else{
-            var id;
-            try{
-                id = JSON.parse(getCookie("discord_link"))['id'];
-            } catch(Error) {
-                id = false;
-            }
             fetch(`https://zero-network.net/zn/?lang=${lang}`,{headers:{Accept:"application/json"},signal: AbortSignal.timeout(10000)})
             .then(e=>e.json())
             .then(e => {
@@ -147,19 +141,25 @@ function loadAllAndConnect(){
         
             for (const [key, value] of Object.entries(start_state["ghosts"])){ 
                 if (value == 0){
-                    fade(document.getElementById(key));
+                    fade(document.getElementById(key), true, true);
+                }
+                else if (value == -2){
+                    died(document.getElementById(key), true, true);
                 }
                 else if (value == -1){
-                    remove(document.getElementById(key));
+                    remove(document.getElementById(key), true, true);
                 }
                 else if (value == 2){
-                    select(document.getElementById(key));
+                    select(document.getElementById(key), true, true);
+                }
+                else if (value == 3){
+                    guess(document.getElementById(key), true, true);
                 }
             }
             for (const [key, value] of Object.entries(start_state["evidence"])){ 
                 if($(document.getElementById(key)).parent().find(".monkey-paw-select").hasClass("monkey-paw-selected"))
                     monkeyPawFilter($(document.getElementById(key)).parent().find(".monkey-paw-select"))
-                
+
                 if (value == 1){
                     tristate(document.getElementById(key));
                 }
