@@ -101,8 +101,13 @@ let taps = [];
 var bpm_speeds = new Set()
 var hit = 0
 
-function bpm_tap(){
-    if (Date.now() - taps[taps.length-1] > (5000)){
+function bpm_tap(ts=-1){
+
+    if (ts == -1){
+        ts = Date.now();
+    }
+
+    if (ts - taps[taps.length-1] > (5000)){
         taps = []
         hit = 0
         document.getElementById('input_bpm').innerHTML = `0<br>bpm`;
@@ -112,7 +117,7 @@ function bpm_tap(){
     document.getElementById('tap_viz').innerHTML += (hit == 0 ? " ." : ".")
     hit = (hit + 1) % 4
     taps.length
-    taps.push( Date.now() );
+    taps.push( ts );
     bpm_calc();
 }
 
@@ -169,8 +174,17 @@ function bpm_calc(forced=false) {
         input_ms = document.getElementById("bpm_type").checked ? av_ms : ex_ms
         document.getElementById('input_bpm').innerHTML = `${Math.round(input_bpm)}<br>bpm`;
         document.getElementById('input_speed').innerHTML = `${input_ms}<br>m/s`;
-        mark_ghosts(input_ms)
-        mark_ghost_details(ex_ms)
+
+        try{
+            mark_ghosts(input_ms)
+        } catch(Error){
+            // Om nom nom
+        }
+        try{
+            mark_ghost_details(ex_ms)
+        } catch(Error){
+            // Om nom nom
+        }
         send_bpm_link(Math.round(input_bpm).toString(),input_ms.toString(),["50%","75%","100%","125%","150%"][parseInt($("#ghost_modifier_speed").val())])
         saveSettings()
     }

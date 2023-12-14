@@ -4,10 +4,10 @@ function setCookie(e,t,i){let n=new Date;n.setTime(n.getTime()+864e5*i);let o="e
 const all_evidence = ["DOTs","EMF 5","Ultrafiolet","Mroźne temperatury","Orb","Pismo ducha","Spirit Box"]
 const all_ghosts = ["Spirit","Wraith","Fantom","Poltergeist","Banshee","Jinn","Mara","Revenant","Shade","Demon","Yurei","Oni","Yokai","Hantu","Goryo","Myling","Onryo","The Twins","Raiju","Obake","Mimik","Moroi","Deogen","Thaye"]
 const all_speed = ["Wolny","Normalny","Szybki"]
-const all_sanity = ["Niski","Average","Early","Bardzowysoki"]
+const all_sanity = ["Niski","Average","Wysoki","Bardzowysoki"]
 let bpm_list = []
 
-var state = {"evidence":{},"speed":{"Wolny":0,"Normalny":0,"Szybki":0},"los":-1,"sanity":{"Niski":0,"Average":0,"Early":0,"Bardzowysoki":0},"ghosts":{}}
+var state = {"evidence":{},"speed":{"Wolny":0,"Normalny":0,"Szybki":0},"los":-1,"sanity":{"Niski":0,"Average":0,"Wysoki":0,"Bardzowysoki":0},"ghosts":{}}
 var user_settings = {"num_evidences":3,"ghost_modifier":2,"volume":50,"mute_timer_toggle":0,"mute_timer_countdown":0,"offset":0,"sound_type":0,"speed_logic_type":0,"bpm":0,"domo_side":0}
 
 let znid = getCookie("znid")
@@ -301,7 +301,7 @@ function filter(ignore_link=false){
     for (var i = 0; i < all_evidence.length; i++){
         state["evidence"][all_evidence[i]] = 0
     }
-    state["sanity"] = {"Niski":0,"Average":0,"Early":0,"Bardzowysoki":0}
+    state["sanity"] = {"Niski":0,"Average":0,"Wysoki":0,"Bardzowysoki":0}
     state["los"] = -1
 
     // Get values of checkboxes
@@ -311,7 +311,7 @@ function filter(ignore_link=false){
     var not_evi_array = [];
     var spe_array = [];
     var san_array = [];
-    var san_lookup = {"Niski":0,"Average":40,"Early":50,"Bardzowysoki":75}
+    var san_lookup = {"Niski":0,"Average":40,"Wysoki":50,"Bardzowysoki":75}
     var monkey_evi = ""
     if (document.querySelectorAll('[name="evidence"] .monkey-disabled').length > 0)
         monkey_evi = document.querySelectorAll('[name="evidence"] .monkey-disabled')[0].parentElement.value;
@@ -621,12 +621,12 @@ function filter(ignore_link=false){
                 else
                     not_fade_sanity.add('Average')
             }
-            if(sanity[0] > san_lookup['Early'] || sanity[1] > san_lookup['Early']){
-                keep_sanity.add('Early')
+            if(sanity[0] > san_lookup['Wysoki'] || sanity[1] > san_lookup['Wysoki']){
+                keep_sanity.add('Wysoki')
                 if (marked_not)
-                    fade_sanity.add('Early')
+                    fade_sanity.add('Wysoki')
                 else
-                    not_fade_sanity.add('Early')
+                    not_fade_sanity.add('Wysoki')
             }
             if(sanity[0] > san_lookup['Bardzowysoki'] || sanity[1] > san_lookup['Bardzowysoki']){
                 keep_sanity.add('Bardzowysoki')
@@ -1175,8 +1175,16 @@ function loadSettings(){
         document.getElementById('input_bpm').innerHTML = `${user_settings['bpm']}<br>bpm`
         var cms = document.getElementById("bpm_type").checked ? get_ms(user_settings['bpm']) : get_ms_exact(user_settings['bpm'])
         document.getElementById('input_speed').innerHTML = `${cms}<br>m/s`;
-        mark_ghosts(cms)
-        mark_ghost_details(cms)
+        try{
+            mark_ghosts(cms)
+        } catch(Error){
+            // Om nom nom
+        }
+        try{
+            mark_ghost_details(cms)
+        } catch(Error){
+            // Om nom nom
+        }
     }
 
     setCookie("settings",JSON.stringify(user_settings),30)

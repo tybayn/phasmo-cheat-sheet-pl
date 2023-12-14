@@ -323,7 +323,12 @@ function link_link(){
                     disconnect_link()
                 }
                 if (incoming_state['action'].toUpperCase() == "DL_STEP"){
-                    bpm_tap()
+                    if (incoming_state.hasOwnProperty("timestamp")){
+                        bpm_tap(incoming_state["timestamp"])
+                    }
+                    else{
+                        bpm_tap()
+                    }
                 }
                 if (incoming_state['action'].toUpperCase() == "DL_RESET"){
                     bpm_clear()
@@ -333,23 +338,7 @@ function link_link(){
                     toggleFilterTools()
                 }
                 if(incoming_state['action'].toUpperCase() == "SAVERESET"){
-                    if(Object.keys(discord_user).length > 0){
-                        if(!hasSelected()){
-                            send_ghost_link("None Selected!",-1)
-                            $("#reset").removeClass("standard_reset")
-                            $("#reset").addClass("reset_pulse")
-                            $("#reset").html("Nie wybrano ducha!<div class='reset_note'>(say 'force reset' to save & reset)</div>")
-                            $("#reset").prop("onclick",null)
-                            $("#reset").prop("ondblclick","reset()")
-                            reset_voice_status()
-                        }
-                        else{
-                            reset()
-                        }
-                    }
-                    else{
-                        reset()
-                    }
+                    reset()
                 }
 
                 if (incoming_state['action'].toUpperCase() == "EVIDENCE"){
@@ -370,6 +359,7 @@ function link_link(){
             }
 
         } catch (error){
+            console.error(error)
             console.log(event.data)
         }
     }

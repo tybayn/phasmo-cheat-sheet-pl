@@ -37,14 +37,14 @@ const ZNLANG = {
         "spirit box":[]
     },
     "speed":{
-        "slow":[],
+        "wolny":[],
         "normalny":[],
-        "fast":[]
+        "szybki":[]
     },
     "sanity":{
-        "late":[],
+        "niski":[],
         "average":["normalny"],
-        "early":[],
-        "very early":[]
+        "wysoki":[],
+        "bardzo wysoki":[]
     }
 }
