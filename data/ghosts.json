@@ -65,7 +65,7 @@
                 "<Informacje>",
                 "Nie jest widoczny na zdjęciu ducha",
                 "Podczas eventu lub w stanie DOTs, zrobienie zdjęcia spowoduje zniknięcie ducha",
-                "Mniej widoczny podczas polowań (zobacz zakładkę 'Poradniki')",
+                "Mniej widoczny podczas polowań (zobacz zakładkę 'Przewodniki')",
                 "<Zachowania>",
                 "Może przywędrować do losowego gracza, zostawiając EMF 2"
             ]
@@ -192,7 +192,7 @@
             ],
             "nightmare_evidence": null,
             "behavior": [
-                "<Prędkość poczas polowania>",
+                "<Prędkość podczas polowania>",
                 "3.0m/s natychmiast po wykryciu gracza (wyposażenie, głos lub pole widzenia) aż dotrze do ostatniej znanej lokalizacji gracza, gdzie stopniowo zwolni do 1m/s"
             ]
         },
@@ -292,9 +292,9 @@
                 "<Informacje>",
                 "zabiera 20% przy ghost eventach, zamiast 10%",
                 "<b><i>Nie</i></b> będzie wykonywał eventu 'air ball'",
-                "Bardziej widoczny podczas polowań (Zobacz zakładkę 'poradniki')",
+                "Bardziej widoczny podczas polowań (Zobacz zakładkę 'przewodniki')",
                 "<Zachowania>",
-                "Bardziej aktywny przy wielu ludziach",
+                "Bardziej aktywny przy wielu graczach",
                 "Bardziej skłonny do pojawienia się jako pełny model ducha"
             ]
         },
@@ -471,7 +471,7 @@
             "behavior": [
                 "<Informacje>",
                 "Podczas polowań, elektronika migocze w zasięgu 15m zamiast 10m",
-                "<Próg polowań>",
+                "<Próg polowania>",
                 "Może zapolować od 65% zdrowia psychicznego blisko aktywnego wyposażenia gracza",
                 "<Prędkość podczas polowania>",
                 "2.5m/s blisko aktywnego wyposażenia gracza, w innym wypadku 1.7m/s",
@@ -550,7 +550,7 @@
             "nightmare_evidence": "Spirit Box",
             "behavior": [
                 "<Informacje>",
-                "Nakłada klątwę na gracza, który usłszy go przez mikrofon paraboliczny lub spirit box, klątwa obniża zdrowie psychiczne 2 razy szybciej",
+                "Nakłada klątwę na gracza, który usłyszy go przez mikrofon paraboliczny lub spirit box, klątwa obniża zdrowie psychiczne 2 razy szybciej",
                 "Czas oślepienia kadzidłem jest wydłużony o 50% (7.5s zamiast 5s)",
                 "<Prędkość podczas polowania>",
                 "Szybszy, gdy średni poziom zdrowia psychicznego jest niższy, może osiągnąć prędkość 3.71 m/s gdy jest w zasięgi wzroku",
@@ -578,7 +578,7 @@
                 "<Informacje>",
                 "Słychać ciężki oddech poprzez spirit box w odległości 1m od ducha  <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/deogen_breathing.wav')\">🔊</span>",
                 "Nie można się ukryć przed tym duchem",
-                "<Prędkość polowania>",
+                "<Prędkość podczas polowania>",
                 "3.0m/s gdy jest daleko, spada do 0.4m/s gdy jest blisko graczy",
                 "<Dowody>",
                 "Gwarantowany spirit box w trybie Koszmarnym / Obłęnym"
