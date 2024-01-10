@@ -474,9 +474,7 @@
                 "<Próg polowania>",
                 "Może zapolować od 65% zdrowia psychicznego blisko aktywnego wyposażenia gracza",
                 "<Prędkość podczas polowania>",
-                "2.5m/s blisko aktywnego wyposażenia gracza, w innym wypadku 1.7m/s",
-                "<Dowody>",
-                "EMF 5 + Orb w trybie koszmarnym potwierdza Raiju"
+                "2.5m/s blisko aktywnego wyposażenia gracza, w innym wypadku 1.7m/s"
             ]
         },
         {
@@ -607,13 +605,11 @@
                 "<Próg polowania>",
                 "Poluje od 75% w najmłodszym wieku, 15% w najstarszym wieku",
                 "<Prędkość podczas polowania>",
-                "2.75m/s w najmłodszym wieku, 1.0m/s w najstarszym wieku <b>nie przyspiesza w zasięgu wzroku</b>",
-                "<Dowody>",
-                "Pismo ducha + DOTs w trybie Koszmarnym potwierdza Thaye"
+                "2.75m/s w najmłodszym wieku, 1.0m/s w najstarszym wieku <b>nie przyspiesza w zasięgu wzroku</b>"
             ]
         }
     ],
-    "version": "v0.9.3.1",
+    "version": "v0.9.4.0",
     "evidence": [
         "EMF 5",
         "Ultrafiolet",
