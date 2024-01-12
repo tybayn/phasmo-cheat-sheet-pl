@@ -5,6 +5,7 @@ const all_speed = ["Wolny","Normalny","Szybki"]
 const all_sanity = ["Niski","Average","Wysoki","Bardzowysoki"]
 let all_evidence = []
 let all_ghosts = []
+let all_maps = {}
 let bpm_list = []
 
 var state = {"evidence":{},"speed":{"Wolny":0,"Normalny":0,"Szybki":0},"los":-1,"sanity":{"Niski":0,"Average":0,"Wysoki":0,"Bardzowysoki":0},"ghosts":{}}
