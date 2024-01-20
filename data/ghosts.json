@@ -66,6 +66,7 @@
                 "Nie jest widoczny na zdjęciu ducha",
                 "Podczas eventu lub w stanie DOTs, zrobienie zdjęcia spowoduje zniknięcie ducha",
                 "Mniej widoczny podczas polowań (zobacz zakładkę 'Przewodniki')",
+                "Zmniejsza zdrowie psychiczne (0,5%/s) podczas wydarzeń/polowań, gdy jest widoczny w promieniu 10 m od gracza",
                 "<Zachowania>",
                 "Może przywędrować do losowego gracza, zostawiając EMF 2"
             ]
@@ -114,6 +115,7 @@
             "behavior": [
                 "<Informacje>",
                 "Banshee krzyczy przez mikrofon paraboliczny  <span class=\"sound\" onClick=\"playSound('https://zero-network.net/phasmophobia/static/assets/banshee_scream.wav')\">🔊</span>",
+                "Cel traci 15% zdrowia psychicznego, jeśli dotknie ducha podczas śpiewającego eventu (standardowy spadek wynosi 10%)",
                 "<Zachowania>",
                 "Podczas polowania będzie iść tylko za swoim celem (chyba, że cel jest poza domem)",
                 "Będzie wędrować do swojego celu bez zostawiania EMF 2",
