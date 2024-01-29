@@ -2,6 +2,7 @@
     "ghosts": [
         {
             "ghost": "Spirit",
+            "name": "Spirit",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -13,7 +14,7 @@
             "evidence": [
                 "EMF 5",
                 "Spirit Box",
-                "Pismo ducha"
+                "Writing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -23,6 +24,7 @@
         },
         {
             "ghost": "Wraith",
+            "name": "Wraith",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -46,7 +48,8 @@
             ]
         },
         {
-            "ghost": "Fantom",
+            "ghost": "Phantom",
+            "name": "Fantom",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -57,7 +60,7 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "Spirit Box",
-                "Ultrafiolet",
+                "Ultraviolet",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -73,6 +76,7 @@
         },
         {
             "ghost": "Poltergeist",
+            "name": "Poltergeist",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -83,8 +87,8 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "Spirit Box",
-                "Ultrafiolet",
-                "Pismo ducha"
+                "Ultraviolet",
+                "Writing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -98,6 +102,7 @@
         },
         {
             "ghost": "Banshee",
+            "name": "Banshee",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -107,8 +112,8 @@
             "hunt_sanity_low": "12%",
             "hunt_sanity_high": "87%",
             "evidence": [
-                "Ultrafiolet",
-                "Orb",
+                "Ultraviolet",
+                "Ghost Orbs",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -127,6 +132,7 @@
         },
         {
             "ghost": "Jinn",
+            "name": "Jinn",
             "min_speed": 1.7,
             "max_speed": 2.5,
             "alt_speed": null,
@@ -137,8 +143,8 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultrafiolet",
-                "Mroźne temperatury"
+                "Ultraviolet",
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -151,7 +157,8 @@
             ]
         },
         {
-            "ghost": "Mara",
+            "ghost": "Mare",
+            "name": "Mara",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -162,8 +169,8 @@
             "hunt_sanity_high": "60%",
             "evidence": [
                 "Spirit Box",
-                "Orb",
-                "Pismo ducha"
+                "Ghost Orbs",
+                "Writing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -179,6 +186,7 @@
         },
         {
             "ghost": "Revenant",
+            "name": "Revenant",
             "min_speed": 1.0,
             "max_speed": 3.0,
             "alt_speed": null,
@@ -188,9 +196,9 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Orb",
-                "Pismo ducha",
-                "Mroźne temperatury"
+                "Ghost Orbs",
+                "Writing",
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -200,6 +208,7 @@
         },
         {
             "ghost": "Shade",
+            "name": "Shade",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -210,8 +219,8 @@
             "hunt_sanity_high": "35%",
             "evidence": [
                 "EMF 5",
-                "Pismo ducha",
-                "Mroźne temperatury"
+                "Writing",
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -226,6 +235,7 @@
         },
         {
             "ghost": "Demon",
+            "name": "Demon",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -235,9 +245,9 @@
             "hunt_sanity_low": "70%",
             "hunt_sanity_high": "100%",
             "evidence": [
-                "Ultrafiolet",
-                "Pismo ducha",
-                "Mroźne temperatury"
+                "Ultraviolet",
+                "Writing",
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -252,6 +262,7 @@
         },
         {
             "ghost": "Yurei",
+            "name": "Yurei",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -261,8 +272,8 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Orb",
-                "Mroźne temperatury",
+                "Ghost Orbs",
+                "Freezing",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -276,6 +287,7 @@
         },
         {
             "ghost": "Oni",
+            "name": "Oni",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -286,7 +298,7 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Mroźne temperatury",
+                "Freezing",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -302,6 +314,7 @@
         },
         {
             "ghost": "Yokai",
+            "name": "Yokai",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -312,7 +325,7 @@
             "hunt_sanity_high": "80%",
             "evidence": [
                 "Spirit Box",
-                "Orb",
+                "Ghost Orbs",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -328,6 +341,7 @@
         },
         {
             "ghost": "Hantu",
+            "name": "Hantu",
             "min_speed": 1.44,
             "max_speed": 2.7,
             "alt_speed": null,
@@ -337,11 +351,11 @@
             "hunt_sanity_low": "50%",
             "hunt_sanity_high": "50%",
             "evidence": [
-                "Ultrafiolet",
-                "Orb",
-                "Mroźne temperatury"
+                "Ultraviolet",
+                "Ghost Orbs",
+                "Freezing"
             ],
-            "nightmare_evidence": "Mroźne temperatury",
+            "nightmare_evidence": "Freezing",
             "behavior": [
                 "<Informacje>",
                 "Duch może mieć widoczny mroźny oddech we wszystkich pokojach podczas polowania z wyłączoną/znisczoną skrzynią bezpieczników",
@@ -356,6 +370,7 @@
         },
         {
             "ghost": "Goryo",
+            "name": "Goryo",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -366,7 +381,7 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultrafiolet",
+                "Ultraviolet",
                 "DOTs"
             ],
             "nightmare_evidence": "DOTs",
@@ -382,6 +397,7 @@
         },
         {
             "ghost": "Myling",
+            "name": "Myling",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -392,8 +408,8 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultrafiolet",
-                "Pismo ducha"
+                "Ultraviolet",
+                "Writing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -405,6 +421,7 @@
         },
         {
             "ghost": "Onryo",
+            "name": "Onryo",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -415,8 +432,8 @@
             "hunt_sanity_high": "100%",
             "evidence": [
                 "Spirit Box",
-                "Orb",
-                "Mroźne temperatury"
+                "Ghost Orbs",
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -431,6 +448,7 @@
         },
         {
             "ghost": "The Twins",
+            "name": "The Twins",
             "min_speed": 1.53,
             "max_speed": 1.87,
             "alt_speed": null,
@@ -442,7 +460,7 @@
             "evidence": [
                 "EMF 5",
                 "Spirit Box",
-                "Mroźne temperatury"
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -456,6 +474,7 @@
         },
         {
             "ghost": "Raiju",
+            "name": "Raiju",
             "min_speed": 1.7,
             "max_speed": 2.5,
             "alt_speed": null,
@@ -466,7 +485,7 @@
             "hunt_sanity_high": "65%",
             "evidence": [
                 "EMF 5",
-                "Orb",
+                "Ghost Orbs",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -481,6 +500,7 @@
         },
         {
             "ghost": "Obake",
+            "name": "Obake",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -491,10 +511,10 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "EMF 5",
-                "Ultrafiolet",
-                "Orb"
+                "Ultraviolet",
+                "Ghost Orbs"
             ],
-            "nightmare_evidence": "Ultrafiolet",
+            "nightmare_evidence": "Ultraviolet",
             "behavior": [
                 "<Informacje>",
                 "Ma specjalne odciski palców z 6 palcami",
@@ -506,7 +526,8 @@
             ]
         },
         {
-            "ghost": "Mimik",
+            "ghost": "The Mimic",
+            "name": "Mimik",
             "min_speed": 1.7,
             "max_speed": null,
             "alt_speed": null,
@@ -517,8 +538,8 @@
             "hunt_sanity_high": "100%",
             "evidence": [
                 "Spirit Box",
-                "Ultrafiolet",
-                "Mroźne temperatury"
+                "Ultraviolet",
+                "Freezing"
             ],
             "nightmare_evidence": null,
             "behavior": [
@@ -534,6 +555,7 @@
         },
         {
             "ghost": "Moroi",
+            "name": "Moroi",
             "min_speed": 1.5,
             "max_speed": 2.25,
             "alt_speed": 3.71,
@@ -544,8 +566,8 @@
             "hunt_sanity_high": "50%",
             "evidence": [
                 "Spirit Box",
-                "Pismo ducha",
-                "Mroźne temperatury"
+                "Writing",
+                "Freezing"
             ],
             "nightmare_evidence": "Spirit Box",
             "behavior": [
@@ -560,6 +582,7 @@
         },
         {
             "ghost": "Deogen",
+            "name": "Deogen",
             "min_speed": 0.4,
             "max_speed": 3.0,
             "alt_speed": null,
@@ -570,7 +593,7 @@
             "hunt_sanity_high": "40%",
             "evidence": [
                 "Spirit Box",
-                "Pismo ducha",
+                "Writing",
                 "DOTs"
             ],
             "nightmare_evidence": "Spirit Box",
@@ -586,6 +609,7 @@
         },
         {
             "ghost": "Thaye",
+            "name": "Thaye",
             "min_speed": 1.0,
             "max_speed": 2.75,
             "alt_speed": null,
@@ -595,8 +619,8 @@
             "hunt_sanity_low": "35%",
             "hunt_sanity_high": "75%",
             "evidence": [
-                "Orb",
-                "Pismo ducha",
+                "Ghost Orbs",
+                "Writing",
                 "DOTs"
             ],
             "nightmare_evidence": null,
@@ -612,13 +636,13 @@
         }
     ],
     "version": "v0.9.4.0",
-    "evidence": [
-        "EMF 5",
-        "Ultrafiolet",
-        "Pismo ducha",
-        "Mroźne temperatury",
-        "DOTs",
-        "Orb",
-        "Spirit Box"
-    ]
+    "evidence": {
+        "EMF 5":"EMF 5",
+        "Ultraviolet":"Ultrafiolet",
+        "Writing":"Pismo ducha",
+        "Freezing":"Mroźne temperatury",
+        "DOTs":"DOTs",
+        "Ghost Orbs":"Orb",
+        "Spirit Box":"Spirit Box"
+    }
 }

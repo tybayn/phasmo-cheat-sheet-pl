@@ -211,7 +211,7 @@
             <hr>
             <div class="modifier_volume yfont white">
                 Desktop Link
-                <a class="download" href="assets/ZN-Desktop-Link-Installer-v2.6.0.msi" download="ZN-Desktop-Link-Installer-v2.6.0.msi"><img class="download_icon" src="imgs/download.png" alt="Download ZN-Desktop-Link"></a>
+                <a class="download" href="assets/ZN-Desktop-Link-Installer-v2.6.1.msi" download="ZN-Desktop-Link-Installer-v2.6.1.msi"><img class="download_icon" src="imgs/download.png" alt="Download ZN-Desktop-Link"></a>
             </div>
             <div class="journal_link">
                 <input type="text" placeholder="DL-XXXXX" id="link_id" class="text" value="DL-XXXXX" disabled style="color:#444;">
@@ -399,15 +399,15 @@
                     Prędkość
                 </div>
                 <div class="speed">
-                    <button id="Wolny" class="tricheck white" name="speed" onclick="dualstate(this)" value="Wolny">
+                    <button id="Slow" class="tricheck white" name="speed" onclick="dualstate(this)" value="Slow">
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Wolny</div>
                     </button>
-                    <button id="Normalny" class="tricheck white" name="speed" onclick="dualstate(this)" value="Normalny">
+                    <button id="Normal" class="tricheck white" name="speed" onclick="dualstate(this)" value="Normal">
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Normalny</div>
                     </button>
-                    <button id="Szybki" class="tricheck white" name="speed" onclick="dualstate(this)" value="Szybki">
+                    <button id="Fast" class="tricheck white" name="speed" onclick="dualstate(this)" value="Fast">
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Szybki</div>
                     </button>
@@ -421,7 +421,7 @@
                     Zdrowie Psychiczne
                 </div>
                 <div class="hunt_sanity">
-                    <button id="Niski" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Niski">
+                    <button id="Late" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Late">
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Niski <span class="hunt_sanity_num">(&lt;40%)</span></div>
                     </button>
@@ -429,11 +429,11 @@
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Normalny <span class="hunt_sanity_num">(>40%)</span></div>
                     </button>
-                    <button id="Wysoki" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Wysoki">
+                    <button id="Early" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Early">
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Wysoki <span class="hunt_sanity_num">(>50%)</span></div>
                     </button>
-                    <button id="Bardzowysoki" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="Bardzowysoki">
+                    <button id="VeryEarly" class="tricheck white" name="hunt-sanity" onclick="dualstate(this,false,true)" value="VeryEarly">
                         <div id="checkbox" class="neutral"><span class="icon"></span></div>
                         <div class="label">Bardzo wysoki <span class="hunt_sanity_num">(>75%)</span></div>
                     </button>
