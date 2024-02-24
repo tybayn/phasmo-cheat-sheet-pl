@@ -144,56 +144,6 @@
 
         <div class="settings_title yfont white">Ustawienia</div>
         <div class="info_block">
-            <div class="modifier_volume yfont white">Głośność</div>
-            <input type="range" id="modifier_volume" name="volume" 
-                min="0" max="100" step="2" default="50" onchange="setVolume();saveSettings();">
-            <div class="modifier_volume_labels">
-                <div class="modifier_volume_label">0%</div>
-                <div class="modifier_volume_label">25%</div>
-                <div class="modifier_volume_label">50%</div>
-                <div class="modifier_volume_label">75%</div>
-                <div class="modifier_volume_label">100%</div>
-            </div>
-            <div class="modifier_note">
-                <input type="checkbox" id="mute_timer_countdown" name="mute_timer_countdown" class="settings_check" onclick="mute('countdown');saveSettings();"><label for="mute_timer_countdown">Wycisz odliczanie okadzenia</label>
-            </div>
-            <div class="modifier_note less_pad">
-                <input type="checkbox" id="mute_timer_toggle" name="mute_timer_toggle" class="settings_check" onclick="mute('toggle');saveSettings();"><label for="mute_timer_toggle">Wycisz efekty dźwiękowe odliczania</label>
-            </div>
-            <div class="modifier_note less_pad">
-                <input type="checkbox" id="timer_count_up" name="timer_count_up" class="settings_check" onclick="toggleCountup();saveSettings();"><label for="timer_count_up">Zmiana kierunku timera</label>
-            </div>
-            <hr>
-            <div class="modifier_volume yfont white">Wyrównywanie prędkości</div>
-            <div id="speed_offset">
-                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(-1);setTempo();saveSettings();">-1</span>
-                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(-0.1);setTempo();saveSettings();">-.1</span>
-                <span id="offset_value"> 0.0% </span>
-                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(0.1);setTempo();saveSettings();">+.1</span>
-                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(1);setTempo();saveSettings();">+1</span>
-            </div>
-            <div class="modifier_note">(Dostosuj prędkość dźwięku kroków)</div>
-            <hr>
-            <div class="modifier_volume yfont white">Filtr logiczny prędkości</div>
-            <div class="speed_logic_select">
-                <span>LUB</span>
-                <label for="speed_logic_type" onchange="filter();saveSettings();">
-                    <input type="checkbox" name="" id="speed_logic_type">
-                    <div class="toggle"></div>
-                </label>
-                <span>ORAZ</span>
-            </div>
-            <hr>
-            <div class="modifier_volume yfont white">Częstotliwość kroków w m/s</div>
-            <div class="speed_logic_select">
-                <span>Dokładne</span>
-                <label for="bpm_type" onchange="bpm_calc(true);saveSettings();">
-                    <input type="checkbox" name="" id="bpm_type">
-                    <div class="toggle"></div>
-                </label>
-                <span>Zaokrąglone</span>
-            </div>
-            <hr>
             <div class="modifier_volume yfont white">Polecenia głosowe</div>
             <div class="journal_link vc_link">
                 <div class="journal_link_buttons">
@@ -230,6 +180,59 @@
                 </div>
             </div>
             <div id="link_id_note" class="modifier_note">(STATUS: Nie połączono)</div>
+            <hr>
+            <div class="modifier_volume yfont white">Wyrównywanie prędkości</div>
+            <div id="speed_offset">
+                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(-1);setTempo();saveSettings();">-1</span>
+                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(-0.1);setTempo();saveSettings();">-.1</span>
+                <span id="offset_value"> 0.0% </span>
+                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(0.1);setTempo();saveSettings();">+.1</span>
+                <span id="minus_speed" class="speed_icon" onclick="adjustOffset(1);setTempo();saveSettings();">+1</span>
+            </div>
+            <div class="modifier_note">(Dostosuj prędkość dźwięku kroków)</div>
+            <hr>
+            <div class="modifier_volume yfont white">Filtr logiczny prędkości</div>
+            <div class="speed_logic_select">
+                <span>LUB</span>
+                <label for="speed_logic_type" onchange="filter();saveSettings();">
+                    <input type="checkbox" name="" id="speed_logic_type">
+                    <div class="toggle"></div>
+                </label>
+                <span>ORAZ</span>
+            </div>
+            <hr>
+            <div class="modifier_volume yfont white">Częstotliwość kroków w m/s</div>
+            <div class="speed_logic_select">
+                <span>Dokładne</span>
+                <label for="bpm_type" onchange="bpm_calc(true);saveSettings();">
+                    <input type="checkbox" name="" id="bpm_type">
+                    <div class="toggle"></div>
+                </label>
+                <span>Zaokrąglone</span>
+            </div>
+            <hr>
+            <div class="modifier_volume yfont white">Głośność</div>
+            <input type="range" id="modifier_volume" name="volume" 
+                min="0" max="100" step="2" default="50" onchange="setVolume();saveSettings();">
+            <div class="modifier_volume_labels">
+                <div class="modifier_volume_label">0%</div>
+                <div class="modifier_volume_label">25%</div>
+                <div class="modifier_volume_label">50%</div>
+                <div class="modifier_volume_label">75%</div>
+                <div class="modifier_volume_label">100%</div>
+            </div>
+            <div class="modifier_note">
+                <input type="checkbox" id="mute_timer_countdown" name="mute_timer_countdown" class="settings_check" onclick="mute('countdown');saveSettings();"><label for="mute_timer_countdown">Wycisz odliczanie okadzenia</label>
+            </div>
+            <div class="modifier_option less_pad">
+                <input type="checkbox" id="mute_timer_toggle" name="mute_timer_toggle" class="settings_check" onclick="mute('toggle');saveSettings();"><label for="mute_timer_toggle">Wycisz efekty dźwiękowe odliczania</label>
+            </div>
+            <div class="modifier_option less_pad">
+                <input type="checkbox" id="timer_count_up" name="timer_count_up" class="settings_check" onclick="toggleCountup();saveSettings();"><label for="timer_count_up">Zmiana kierunku timera</label>
+            </div>
+            <div class="modifier_option less_pad">
+                <input type="checkbox" id="timer_split" name="timer_split" class="settings_check" onclick="saveSettings();"><label for="timer_split">Podział timera (Desktop Link)</label>
+            </div>
         </div>
         <div id="session">-</div>
     </div>
@@ -419,13 +422,13 @@
                     Dowody 
                 </div>
 
-                <select name="num_evidence" id="num_evidence" class="num_evidence" onchange="showCustom();filter();flashMode();updateMapDifficulty(this.value);saveSettings();">
+                <select name="num_evidence" id="num_evidence" class="num_evidence" onchange="showCustom();filter();flashMode();setGhostSpeedFromDifficulty(this.value);updateMapDifficulty(this.value);bpm_calc(true);saveSettings();">
                     <option value="3A">Amator (3)</option>
                     <option value="3I">Średni (3)</option>
                     <option value="3">Profesjonalista (3)</option>
                     <option value="2">Koszmarny (2)</option>
                     <option value="1">Obłęd (1)</option>
-                    <option value="0">Apokalipsa (0)</option>
+                    <option value="0">Apokalipsa III (0)</option>
                     <option value="-1">Niestandardowe (?)</option>
                 </select>
 
@@ -506,7 +509,8 @@
         <div id="domovoi-text" style="display: none;">Cześć! Jestem Domo!</div>
         <img id="domovoi-img" src="imgs/domovoi.png" onmouseenter="domovoi_show_last()" onmouseleave="domovoi_hide_last()" ondblclick="domovoi_print_logs()">
     </div>
-    <div id="eye" onclick="revive()"><img src="imgs/eye.png"></div>
+    <input type="checkbox" id="priority_sort" onchange="prioritySort();saveSettings();"><label for="priority_sort" title="Sort faded ghosts to the bottom"><img id="sort_img" src="imgs/not-sort-icon.png"></label>
+    <div id="eye" onclick="revive()" title="Show manually hidden ghosts"><img src="imgs/eye.png"></div>
 
 
     <script>
