@@ -225,7 +225,8 @@
             "nightmare_evidence": null,
             "behavior": [
                 "<Informacje>",
-                "Nie wykonuje interakcji, które powodują EMF 2, 3 lub 5 z kimś w tym samym pokoju (poza pismem ducha)",
+                "Nie może wykonywać wydarzeń w tym samym pomieszczeniu co gracz (ale może rozpocząć wydarzenie poza pomieszczeniem i teleportować się do gracza)",
+                "Nie wykonuje interakcji, które skutkują EMF 2, EMF 3 lub EMF 5, gdy znajduje się w tym samym pomieszczeniu co gracz, w tym pisania duchów i wzniecania płomieni (może opuścić pomieszczenie i wchodzić w interakcje z przedmiotami w pomieszczeniu)",
                 "Nie rozpocznie polowania z kimś w tym samym pokoju",
                 "<Zachowania>",
                 "Im mniej zdrowia psychicznego, tym więcej ghost eventów",
